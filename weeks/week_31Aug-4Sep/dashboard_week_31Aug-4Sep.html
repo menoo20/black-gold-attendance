@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard - 31-Aug to 4-Sep 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .week-info {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .chart-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+        .chart-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Weekly Attendance Dashboard</h1>
+            <div class="week-info">
+                <h2>Week of 31-Aug - 4-Sep, 2025</h2>
+                <p>Analysis completed on 2025-09-07 15:18:35</p>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">439</div>
+                <div>Total Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95</div>
+                <div>Full Week Attendance</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">212</div>
+                <div>Partial Attendance</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">132</div>
+                <div>Never Attended</div>
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-card">
+                <div class="chart-title">Group Distribution</div>
+                <canvas id="groupChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Overall Distribution</div>
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Group Chart
+        const groupCtx = document.getElementById('groupChart').getContext('2d');
+        new Chart(groupCtx, {
+            type: 'bar',
+            data: {
+                labels: ['SAIPEM 8', 'SAIPEM 7 ', 'SAIPEM 6 ', 'SAIPEM 5', 'SAIPEM 3 ', 'SAIPEM 4', 'SAIPEM 1', 'Alfa 2', 'SAIPEM 2 ', 'Sin 4 ', 'DEYE', 'SAM 1 ', 'SAM 2 ', 'SAM 6', 'SAM 3', 'SAM 4', 'SAM 5', 'Diang', 'Dabal ', 'Aman+Elc+Fahss'],
+                datasets: [
+                    {
+                        label: 'Full Week',
+                        data: [8, 7, 10, 12, 1, 2, 5, 0, 2, 0, 1, 9, 4, 8, 11, 4, 7, 0, 4, 0],
+                        backgroundColor: '#2ca02c'
+                    },
+                    {
+                        label: 'Partial',
+                        data: [11, 13, 6, 8, 13, 17, 11, 11, 16, 8, 10, 12, 12, 9, 7, 12, 11, 3, 8, 14],
+                        backgroundColor: '#ff7f0e'
+                    },
+                    {
+                        label: 'Never',
+                        data: [0, 1, 4, 0, 4, 3, 5, 19, 2, 7, 23, 3, 3, 1, 3, 5, 3, 7, 3, 36],
+                        backgroundColor: '#d62728'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true }
+                }
+            }
+        });
+
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Full Week', 'Partial', 'Never'],
+                datasets: [{
+                    data: [95, 212, 132],
+                    backgroundColor: ['#2ca02c', '#ff7f0e', '#d62728']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "week_31Aug-4Sep": {
+    "week_id": "week_31Aug-4Sep",
+    "start_date": "31-Aug",
+    "end_date": "4-Sep",
+    "excel_file": "Attendance sheets\\كشوفات الغياب الاسبوعي 31-8-2025(drive).xlsx",
+    "description": "First week of September 2025",
+    "year": 2025,
+    "analysis_date": "2025-09-07 15:18:35",
+    "directory": "weeks\\week_31Aug-4Sep",
+    "summary": {
+      "total_students": 439,
+      "full_week": 95,
+      "partial": 212,
+      "never": 132,
+      "average_attendance": 48.56492027334852,
+      "groups": 20
+    }
+  }
+}
