@@ -1,0 +1,375 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weekly Attendance Analytics Dashboard (31 Aug - 4 Sep 2025)</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+            }
+            
+            .dashboard-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                padding: 30px;
+            }
+            
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+                color: #333;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+                margin: 0;
+                color: #2c3e50;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+                color: #7f8c8d;
+                margin: 10px 0;
+            }
+            
+            .kpi-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .kpi-card {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+                padding: 25px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .kpi-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .kpi-card.success {
+                background: linear-gradient(135deg, #27ae60, #229954);
+            }
+            
+            .kpi-card.warning {
+                background: linear-gradient(135deg, #f39c12, #e67e22);
+            }
+            
+            .kpi-card.danger {
+                background: linear-gradient(135deg, #e74c3c, #c0392b);
+            }
+            
+            .kpi-number {
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin: 0;
+            }
+            
+            .kpi-label {
+                font-size: 0.9rem;
+                margin: 5px 0 0 0;
+                opacity: 0.9;
+            }
+            
+            .charts-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            
+            .chart-card {
+                background: white;
+                border-radius: 10px;
+                padding: 25px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                border: 1px solid #ecf0f1;
+            }
+            
+            .chart-title {
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #2c3e50;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .chart-container {
+                position: relative;
+                height: 300px;
+            }
+            
+            .insights {
+                background: #f8f9fa;
+                border-radius: 10px;
+                padding: 25px;
+                margin-top: 30px;
+                border-left: 5px solid #3498db;
+            }
+            
+            .insights h3 {
+                color: #2c3e50;
+                margin-top: 0;
+            }
+            
+            .insight-item {
+                margin: 10px 0;
+                padding: 10px;
+                background: white;
+                border-radius: 5px;
+                border-left: 3px solid #3498db;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dashboard-container">
+            <div class="header">
+                <h1>📊 Weekly Attendance Analytics Dashboard</h1>
+                <h2 style="color: #3498db; margin: 10px 0;">Week of 31 August - 4 September 2025</h2>
+                <p>Comprehensive analysis with updated logic: 3/4 or 4/4 sessions = Full Day Attendance</p>
+                <p><strong>Total Students Analyzed:</strong> 439 students from 20 groups</p>
+            </div>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card success">
+                    <div class="kpi-number">95</div>
+                    <div class="kpi-label">Full Week Attendees</div>
+                </div>
+                <div class="kpi-card warning">
+                    <div class="kpi-number">212</div>
+                    <div class="kpi-label">Partial Attendees</div>
+                </div>
+                <div class="kpi-card danger">
+                    <div class="kpi-number">132</div>
+                    <div class="kpi-label">Never Attended</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-number">48.6%</div>
+                    <div class="kpi-label">Overall Avg Attendance</div>
+                </div>
+            </div>
+            
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-title">📊 Weekly Attendance Distribution by Group</div>
+                    <div class="chart-container">
+                        <canvas id="groupChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-title">🥧 Weekly Attendance Overview</div>
+                    <div class="chart-container">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-title">📈 Average Weekly Performance by Group</div>
+                    <div class="chart-container">
+                        <canvas id="avgChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-title">📅 Daily Attendance Pattern (31 Aug - 4 Sep)</div>
+                    <div class="chart-container">
+                        <canvas id="dailyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insights">
+                <h3>🔍 Key Insights</h3>
+                <div class="insight-item">
+                    <strong>Analysis Period:</strong> Week of 31 August - 4 September 2025 (5 working days)
+                </div>
+                <div class="insight-item">
+                    <strong>Highest Performing Group:</strong> SAIPEM 5 
+                    (90.0% avg attendance)
+                </div>
+                <div class="insight-item">
+                    <strong>Best Day:</strong> Tue (2-Sep) 
+                    (237 students present)
+                </div>
+                <div class="insight-item">
+                    <strong>Weekly Completion Rate:</strong> 21.6% of students attended all 5 days
+                </div>
+                <div class="insight-item">
+                    <strong>Total Data Analyzed:</strong> 20 groups with 439 students
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Group Attendance Chart (Stacked Bar)
+            const groupCtx = document.getElementById('groupChart').getContext('2d');
+            new Chart(groupCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['SAIPEM 8', 'SAIPEM 7 ', 'SAIPEM 6 ', 'SAIPEM 5', 'SAIPEM 3 ', 'SAIPEM 4', 'SAIPEM 1', 'Alfa 2', 'SAIPEM 2 ', 'Sin 4 ', 'DEYE', 'SAM 1 ', 'SAM 2 ', 'SAM 6', 'SAM 3', 'SAM 4', 'SAM 5', 'Diang', 'Dabal ', 'Aman+Elc+Fahss'],
+                    datasets: [
+                        {
+                            label: 'Full Week (5/5)',
+                            data: [8, 7, 10, 12, 1, 2, 5, 0, 2, 0, 1, 9, 4, 8, 11, 4, 7, 0, 4, 0],
+                            backgroundColor: '#27ae60',
+                            borderColor: '#229954',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Partial (1-4)',
+                            data: [11, 13, 6, 8, 13, 17, 11, 11, 16, 8, 10, 12, 12, 9, 7, 12, 11, 3, 8, 14],
+                            backgroundColor: '#f39c12',
+                            borderColor: '#e67e22',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Never Attended',
+                            data: [0, 1, 4, 0, 4, 3, 5, 19, 2, 7, 23, 3, 3, 1, 3, 5, 3, 7, 3, 36],
+                            backgroundColor: '#e74c3c',
+                            borderColor: '#c0392b',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                maxRotation: 45
+                            }
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+
+            // Overall Distribution Pie Chart
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Full Week', 'Partial', 'Never Attended'],
+                    datasets: [{
+                        data: [95, 212, 132],
+                        backgroundColor: ['#27ae60', '#f39c12', '#e74c3c'],
+                        borderColor: ['#229954', '#e67e22', '#c0392b'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Average Attendance Chart
+            const avgCtx = document.getElementById('avgChart').getContext('2d');
+            new Chart(avgCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['SAIPEM 8', 'SAIPEM 7 ', 'SAIPEM 6 ', 'SAIPEM 5', 'SAIPEM 3 ', 'SAIPEM 4', 'SAIPEM 1', 'Alfa 2', 'SAIPEM 2 ', 'Sin 4 ', 'DEYE', 'SAM 1 ', 'SAM 2 ', 'SAM 6', 'SAM 3', 'SAM 4', 'SAM 5', 'Diang', 'Dabal ', 'Aman+Elc+Fahss'],
+                    datasets: [{
+                        label: 'Average Attendance %',
+                        data: [78.94736842105263, 67.61904761904762, 73.0, 90.0, 33.333333333333336, 49.09090909090909, 53.333333333333336, 13.333333333333334, 54.0, 20.0, 18.235294117647058, 68.33333333333333, 61.05263157894737, 77.77777777777777, 74.28571428571429, 49.523809523809526, 67.61904761904762, 12.0, 65.33333333333333, 12.4],
+                        backgroundColor: '#3498db',
+                        borderColor: '#2980b9',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: {
+                                maxRotation: 45
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Daily Pattern Chart
+            const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+            new Chart(dailyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Sun (31-Aug)', 'Mon (1-Sep)', 'Tue (2-Sep)', 'Wed (3-Sep)', 'Thu (4-Sep)'],
+                    datasets: [{
+                        label: 'Students Present',
+                        data: [195, 216, 237, 234, 184],
+                        borderColor: '#9b59b6',
+                        backgroundColor: 'rgba(155, 89, 182, 0.2)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    

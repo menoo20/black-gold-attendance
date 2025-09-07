@@ -1,0 +1,25 @@
+# Attendance Statistics Analysis
+
+# Ignore Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+.pytest_cache
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
