@@ -16,5 +16,23 @@
       "average_attendance": 48.56492027334852,
       "groups": 20
     }
+  },
+  "week_7Sep-11Sep": {
+    "week_id": "week_7Sep-11Sep",
+    "start_date": "7-Sep",
+    "end_date": "11-Sep",
+    "excel_file": "Attendance sheets\\كشوفات الغياب الاسبوعي 07-09-2025(drive).xlsx",
+    "description": "Second week of September 2025 - Post DEYE refinement",
+    "year": 2025,
+    "analysis_date": "2025-09-14 01:23:20",
+    "directory": "weeks\\week_7Sep-11Sep",
+    "summary": {
+      "total_students": 449,
+      "full_week": 118,
+      "partial": 198,
+      "never": 133,
+      "average_attendance": 52.65033407572383,
+      "groups": 20
+    }
   }
 }
