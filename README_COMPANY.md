@@ -1,6 +1,12 @@
-# 📊 Black Gold Attendance Analysis Dashboard
+# 📊 Black Gold Attendance Analysis Dashbo### 4. **Access Comprehensive Files**
 
-**Live Dashboard**: [View Attendance Statistics](https://your-username.github.io/attendance-analysis/)
+> 🔒 **Internal Access Only** - Detailed files for authorized personnel
+
+📁 **[Google Drive Folder - Detailed Reports & Files](https://drive.google.com/drive/folders/1GKzWMbtEMaNlZjGmBKk4yf8Te5Qt_Gc-?usp=sharing)** *(Internal)*
+
+Access comprehensive Excel reports and detailed analysis files for all weeks.e Dashboard**: [View Attendance Statistics](https://menoo20.github.io/black-gold-attendance/)
+
+📁 **[Google Drive - Detailed Files](https://drive.google.com/drive/folders/1GKzWMbtEMaNlZjGmBKk4yf8Te5Qt_Gc-?usp=sharing)** | 📊 **[GitHub Repository](https://github.com/menoo20/black-gold-attendance)**
 
 ## 🎯 Overview
 
@@ -37,6 +43,20 @@ This dashboard provides real-time attendance analysis for Black Gold training pr
 - **Overall Statistics**: Pie charts and percentages
 - **Trend Analysis**: Week-to-week improvements
 - **Excel Reports**: Downloadable detailed data
+
+### 4. **Access Comprehensive Files**
+
+> � **RESTRICTED ACCESS - BLACK GOLD MEMBERS ONLY**  
+> The following folder contains confidential training data and detailed student information. Access is strictly limited to authorized Black Gold personnel.
+
+�📁 **[Google Drive Folder - Detailed Reports & Files](https://drive.google.com/drive/folders/1GKzWMbtEMaNlZjGmBKk4yf8Te5Qt_Gc-?usp=sharing)** *(Black Gold Members Only)*
+
+**What's in the Drive:**
+- 📊 **Complete Excel Reports** with student-level details
+- 🖼️ **High-Resolution Charts** for presentations
+- 📈 **Raw Data Files** and analysis scripts
+- 📋 **Weekly Archives** and historical data
+- 🔄 **Real-Time Updates** as new weeks are added
 
 ## 📊 Available Data
 
@@ -104,12 +124,18 @@ For questions about:
 - **Technical Issues**: Contact System Administrator
 - **New Features**: Submit enhancement requests
 
-## 🔒 Data Privacy
+## 🔒 Data Privacy & Access Control
 
-- All student data is anonymized for web display
-- Detailed personal information only in internal Excel reports
-- Dashboard shows aggregate statistics and trends
-- Compliant with company data protection policies
+### Public Dashboard (GitHub Pages):
+- ✅ Aggregate statistics and trends only
+- ✅ No personal information exposed
+- ✅ Safe for general company access
+
+### Internal Drive Folder:
+- 🔒 **Internal Access** - Contains detailed data
+- 🔒 Complete reports with sensitive information
+- 🔒 Requires company credentials
+- 🔒 Authorized personnel only
 
 ---
 

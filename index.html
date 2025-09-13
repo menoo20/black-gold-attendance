@@ -25,6 +25,16 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .logo-img {
+            height: 50px;
+            margin-right: 15px;
+        }
         .spinner {
             border: 4px solid rgba(255,255,255,0.3);
             border-radius: 50%;
@@ -50,10 +60,14 @@
 </head>
 <body>
     <div class="loading">
-        <h1>📊 Black Gold Attendance Dashboard</h1>
+        <div class="logo-container">
+            <img src="black-gold-sold-1.png" alt="Black Gold" class="logo-img">
+            <h1>Black Gold Attendance Dashboard</h1>
+        </div>
         <div class="spinner"></div>
         <p>Loading dashboard...</p>
         <p><small>If not redirected automatically, <a href="master_dashboard.html">click here</a></small></p>
+        <p><small>📁 <a href="https://drive.google.com/drive/folders/1GKzWMbtEMaNlZjGmBKk4yf8Te5Qt_Gc-?usp=sharing" target="_blank">Detailed Files (Internal)</a></small></p>
     </div>
     
     <script>
