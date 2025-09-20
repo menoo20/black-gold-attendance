@@ -1,0 +1,184 @@
+{
+  "week_info": {
+    "week_id": "week_14Sep-18Sep",
+    "start_date": "14-Sep",
+    "end_date": "18-Sep",
+    "excel_file": "Attendance sheets\\كشوفات الغياب الاسبوعي 14-09-2025(drive).xlsx",
+    "description": "Third week of September 2025 - Continued monitoring",
+    "year": 2025,
+    "analysis_date": "2025-09-20 21:05:01",
+    "directory": "weeks\\week_14Sep-18Sep",
+    "summary": {
+      "total_students": 485,
+      "full_week": 154,
+      "partial": 199,
+      "never": 132,
+      "average_attendance": 56.16494845360825,
+      "groups": 22
+    }
+  },
+  "group_stats": {
+    "SAIPEM 8": {
+      "total_students": 19,
+      "average_attendance": 71.57894736842105,
+      "full_week_count": 11,
+      "partial_count": 5,
+      "never_attended_count": 3
+    },
+    "SAIPEM 7 ": {
+      "total_students": 21,
+      "average_attendance": 83.80952380952381,
+      "full_week_count": 11,
+      "partial_count": 9,
+      "never_attended_count": 1
+    },
+    "SAIPEM 6 ": {
+      "total_students": 19,
+      "average_attendance": 74.73684210526316,
+      "full_week_count": 10,
+      "partial_count": 8,
+      "never_attended_count": 1
+    },
+    "SAIPEM 5": {
+      "total_students": 21,
+      "average_attendance": 70.47619047619048,
+      "full_week_count": 8,
+      "partial_count": 11,
+      "never_attended_count": 2
+    },
+    "SAIPEM 4": {
+      "total_students": 21,
+      "average_attendance": 60.95238095238095,
+      "full_week_count": 5,
+      "partial_count": 11,
+      "never_attended_count": 5
+    },
+    "SAIPEM 3 ": {
+      "total_students": 19,
+      "average_attendance": 64.21052631578948,
+      "full_week_count": 7,
+      "partial_count": 9,
+      "never_attended_count": 3
+    },
+    "SAIPEM 2 ": {
+      "total_students": 21,
+      "average_attendance": 71.42857142857143,
+      "full_week_count": 9,
+      "partial_count": 9,
+      "never_attended_count": 3
+    },
+    "SAIPEM 1": {
+      "total_students": 20,
+      "average_attendance": 68.0,
+      "full_week_count": 8,
+      "partial_count": 8,
+      "never_attended_count": 4
+    },
+    "SAM 1 ": {
+      "total_students": 24,
+      "average_attendance": 61.666666666666664,
+      "full_week_count": 7,
+      "partial_count": 14,
+      "never_attended_count": 3
+    },
+    "SAM 2 ": {
+      "total_students": 16,
+      "average_attendance": 41.25,
+      "full_week_count": 3,
+      "partial_count": 7,
+      "never_attended_count": 6
+    },
+    "SAM 3": {
+      "total_students": 24,
+      "average_attendance": 73.33333333333333,
+      "full_week_count": 12,
+      "partial_count": 10,
+      "never_attended_count": 2
+    },
+    "SAM 4": {
+      "total_students": 26,
+      "average_attendance": 64.61538461538461,
+      "full_week_count": 12,
+      "partial_count": 9,
+      "never_attended_count": 5
+    },
+    "SAM 5": {
+      "total_students": 24,
+      "average_attendance": 56.666666666666664,
+      "full_week_count": 8,
+      "partial_count": 11,
+      "never_attended_count": 5
+    },
+    "SAM 6": {
+      "total_students": 19,
+      "average_attendance": 81.05263157894737,
+      "full_week_count": 12,
+      "partial_count": 6,
+      "never_attended_count": 1
+    },
+    "SAM 7": {
+      "total_students": 15,
+      "average_attendance": 60.0,
+      "full_week_count": 0,
+      "partial_count": 13,
+      "never_attended_count": 2
+    },
+    "SAM 8": {
+      "total_students": 14,
+      "average_attendance": 52.857142857142854,
+      "full_week_count": 5,
+      "partial_count": 4,
+      "never_attended_count": 5
+    },
+    "Alfa 2": {
+      "total_students": 29,
+      "average_attendance": 67.58620689655173,
+      "full_week_count": 9,
+      "partial_count": 17,
+      "never_attended_count": 3
+    },
+    "Sin 4 ": {
+      "total_students": 14,
+      "average_attendance": 62.857142857142854,
+      "full_week_count": 8,
+      "partial_count": 1,
+      "never_attended_count": 5
+    },
+    "DEYE": {
+      "total_students": 33,
+      "average_attendance": 7.2727272727272725,
+      "full_week_count": 0,
+      "partial_count": 7,
+      "never_attended_count": 26
+    },
+    "Diang": {
+      "total_students": 20,
+      "average_attendance": 25.0,
+      "full_week_count": 0,
+      "partial_count": 7,
+      "never_attended_count": 13
+    },
+    "Dabal ": {
+      "total_students": 15,
+      "average_attendance": 70.66666666666667,
+      "full_week_count": 5,
+      "partial_count": 10,
+      "never_attended_count": 0
+    },
+    "Aman+Elc+Fahss": {
+      "total_students": 51,
+      "average_attendance": 21.568627450980394,
+      "full_week_count": 4,
+      "partial_count": 13,
+      "never_attended_count": 34
+    }
+  },
+  "summary": {
+    "total_students": 485,
+    "full_week": 154,
+    "partial": 199,
+    "never": 132,
+    "average_attendance": 56.16494845360825,
+    "groups": 22
+  }
+}

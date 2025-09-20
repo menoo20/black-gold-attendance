@@ -34,5 +34,23 @@
       "average_attendance": 52.65033407572383,
       "groups": 20
     }
+  },
+  "week_14Sep-18Sep": {
+    "week_id": "week_14Sep-18Sep",
+    "start_date": "14-Sep",
+    "end_date": "18-Sep",
+    "excel_file": "Attendance sheets\\كشوفات الغياب الاسبوعي 14-09-2025(drive).xlsx",
+    "description": "Third week of September 2025 - Continued monitoring",
+    "year": 2025,
+    "analysis_date": "2025-09-20 21:05:01",
+    "directory": "weeks\\week_14Sep-18Sep",
+    "summary": {
+      "total_students": 485,
+      "full_week": 154,
+      "partial": 199,
+      "never": 132,
+      "average_attendance": 56.16494845360825,
+      "groups": 22
+    }
   }
 }
